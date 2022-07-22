@@ -3,11 +3,13 @@
 
 // I AM NOT DONE
 
-struct ColorClassicStruct {
-    // TODO: Something goes here
+struct ColorClassicStruct<'a> {
+    name: &'a str,
+    hex: &'a str,
 }
 
-struct ColorTupleStruct(/* TODO: Something goes here */);
+struct ColorTupleStruct<'a>(&'a str, &'a str);
+
 
 #[derive(Debug)]
 struct UnitStruct;
@@ -19,7 +21,10 @@ mod tests {
     #[test]
     fn classic_c_structs() {
         // TODO: Instantiate a classic c struct!
-        // let green =
+        let green = ColorClassicStruct {
+            name: "green",
+            hex: "#00FF00",
+        }
 
         assert_eq!(green.name, "green");
         assert_eq!(green.hex, "#00FF00");
